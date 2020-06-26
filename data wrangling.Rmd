@@ -1,0 +1,39 @@
+---
+title: "Data Wrangling"
+author: "Parvinder Tomar"
+date: "6/26/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r data wrangling}
+#install.packages("tidyverse")
+#install.packages("gapminder")
+
+library(gapminder)
+library(dplyr)
+
+
+
+
+#glimpse(gapminder)
+
+#gapminder%>% filter(year==2002,country=="United States")
+
+#gapminder%>% arrange(desc(pop))
+gapminder%>%filter(country=="United States")%>% mutate(lifeExpMonths=lifeExp*12)%>%arrange(desc(lifeExp))
+
+
+
+```
+
+
